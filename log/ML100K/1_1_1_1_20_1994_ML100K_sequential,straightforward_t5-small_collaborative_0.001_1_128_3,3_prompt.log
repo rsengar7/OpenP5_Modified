@@ -1,0 +1,44 @@
+2024-10-30 15:46:55,049 - root - INFO - {'seed': 2023, 'model_dir': '../model', 'checkpoint_dir': '../checkpoint', 'model_name': 'ML100K_collaborative.pt', 'log_dir': '../log', 'distributed': 1, 'gpu': '4,5', 'master_addr': 'localhost', 'master_port': '1994', 'logging_level': 20, 'data_path': '../data', 'item_indexing': 'collaborative', 'tasks': 'sequential,straightforward', 'datasets': 'ML100K', 'prompt_file': '../prompt.txt', 'sequential_order': 'original', 'collaborative_token_size': 100, 'collaborative_cluster': 10, 'collaborative_last_token': 'sequential', 'collaborative_float32': 0, 'max_his': 20, 'his_prefix': 1, 'his_sep': ' , ', 'skip_empty_his': 1, 'valid_prompt': 'seen:0', 'valid_prompt_sample': 1, 'valid_sample_num': '3,3', 'test_prompt': 'seen:0', 'sample_prompt': 1, 'sample_num': '3,3', 'batch_size': 128, 'eval_batch_size': 20, 'dist_sampler': 0, 'optim': 'AdamW', 'epochs': 1, 'lr': 0.001, 'clip': 1, 'logging_step': 100, 'warmup_prop': 0.05, 'gradient_accumulation_steps': 1, 'weight_decay': 0.01, 'adam_eps': 1e-06, 'dropout': 0.1, 'alpha': 2, 'rank': 0, 'train': 0, 'backbone': 't5-small', 'metrics': 'hit@5,hit@10,ndcg@5,ndcg@10', 'load': 0, 'random_initialize': 1, 'test_epoch': 0, 'valid_select': 0, 'test_before_train': 0, 'test_filtered': 0, 'test_filtered_batch': 1, 'log_name': '1_1_1_1_20_1994_ML100K_sequential,straightforward_t5-small_collaborative_0.001_1_128_3,3_prompt', 'model_path': '../checkpoint/ML100K_collaborative.pt'}
+2024-10-30 15:46:55,361 - root - INFO - Generating data for ML100K dataset
+2024-10-30 15:46:55,361 - root - INFO - Get prompt template from ../prompt.txt
+2024-10-30 15:46:55,362 - root - INFO - Considering {dataset} user_{user_id} has interacted with {dataset} items {history} . What is the next recommendation for the user ?
+2024-10-30 15:46:55,362 - root - INFO - Required info: ['user_id', 'history', 'target', 'dataset']
+2024-10-30 15:46:55,363 - root - INFO - Reindex data with collaborative indexing method with token_size 100 and 10 cluster
+2024-10-30 15:46:55,374 - root - INFO - loading training data
+2024-10-30 15:46:55,377 - root - INFO - Getting prompt information
+2024-10-30 15:46:55,392 - root - INFO - Input: Here is the purchase history of ML100K user_1 : ML100K item item_<CI2><CI20><CI18> , item_<CI3><CI33><CI3> , item_<CI5><CI54><CI3> , item_<CI1><CI12><CI1> , item_<CI2><CI21><CI4> , item_<CI1><CI13><CI15> , item_<CI2><CI20><CI12> , item_<CI2><CI20><CI20> , item_<CI2><CI29><CI2> , item_<CI8><CI45> , item_<CI2><CI24><CI11> , item_<CI3><CI33><CI4> , item_<CI1><CI13><CI12> , item_<CI5><CI51><CI4> , item_<CI1><CI17><CI14> , item_<CI4><CI49><CI4> , item_<CI1><CI12><CI16> , item_<CI1><CI12><CI13> , item_<CI6><CI64> , item_<CI1><CI12><CI5> . I wonder what is the next recommended item for the user . , Output: ML100K item_<CI1><CI13><CI13> 
+2024-10-30 15:46:55,441 - root - INFO - Use t5-small backbone model
+2024-10-30 15:46:56,018 - root - INFO - Random initialize number related tokens
+2024-10-30 15:46:57,302 - root - INFO - Load model from ../checkpoint/ML100K_collaborative.pt
+2024-10-30 15:46:58,398 - root - INFO - testing ML100K dataset on sequential task
+2024-10-30 15:47:09,994 - root - INFO - hit@5: 0.0
+2024-10-30 15:47:09,994 - root - INFO - hit@10: 0.0
+2024-10-30 15:47:09,995 - root - INFO - ndcg@5: 0.0
+2024-10-30 15:47:09,995 - root - INFO - ndcg@10: 0.0
+2024-10-30 15:47:10,063 - root - INFO - testing ML100K dataset on straightforward task
+2024-10-30 15:47:12,524 - root - INFO - hit@5: 0.0
+2024-10-30 15:47:12,524 - root - INFO - hit@10: 0.0
+2024-10-30 15:47:12,524 - root - INFO - ndcg@5: 0.0
+2024-10-30 15:47:12,524 - root - INFO - ndcg@10: 0.0
+2024-10-30 15:47:17,349 - root - INFO - {'seed': 2023, 'model_dir': '../model', 'checkpoint_dir': '../checkpoint', 'model_name': 'ML100K_collaborative.pt', 'log_dir': '../log', 'distributed': 1, 'gpu': '4,5', 'master_addr': 'localhost', 'master_port': '1994', 'logging_level': 20, 'data_path': '../data', 'item_indexing': 'collaborative', 'tasks': 'sequential,straightforward', 'datasets': 'ML100K', 'prompt_file': '../prompt.txt', 'sequential_order': 'original', 'collaborative_token_size': 100, 'collaborative_cluster': 10, 'collaborative_last_token': 'sequential', 'collaborative_float32': 0, 'max_his': 20, 'his_prefix': 1, 'his_sep': ' , ', 'skip_empty_his': 1, 'valid_prompt': 'seen:0', 'valid_prompt_sample': 1, 'valid_sample_num': '3,3', 'test_prompt': 'unseen:0', 'sample_prompt': 1, 'sample_num': '3,3', 'batch_size': 128, 'eval_batch_size': 20, 'dist_sampler': 0, 'optim': 'AdamW', 'epochs': 1, 'lr': 0.001, 'clip': 1, 'logging_step': 100, 'warmup_prop': 0.05, 'gradient_accumulation_steps': 1, 'weight_decay': 0.01, 'adam_eps': 1e-06, 'dropout': 0.1, 'alpha': 2, 'rank': 0, 'train': 0, 'backbone': 't5-small', 'metrics': 'hit@5,hit@10,ndcg@5,ndcg@10', 'load': 0, 'random_initialize': 1, 'test_epoch': 0, 'valid_select': 0, 'test_before_train': 0, 'test_filtered': 0, 'test_filtered_batch': 1, 'log_name': '1_1_1_1_20_1994_ML100K_sequential,straightforward_t5-small_collaborative_0.001_1_128_3,3_prompt', 'model_path': '../checkpoint/ML100K_collaborative.pt'}
+2024-10-30 15:47:17,545 - root - INFO - Generating data for ML100K dataset
+2024-10-30 15:47:17,545 - root - INFO - Get prompt template from ../prompt.txt
+2024-10-30 15:47:17,545 - root - INFO - Considering {dataset} user_{user_id} has interacted with {dataset} items {history} . What is the next recommendation for the user ?
+2024-10-30 15:47:17,546 - root - INFO - Required info: ['dataset', 'target', 'user_id', 'history']
+2024-10-30 15:47:17,546 - root - INFO - Reindex data with collaborative indexing method with token_size 100 and 10 cluster
+2024-10-30 15:47:17,547 - root - INFO - loading training data
+2024-10-30 15:47:17,550 - root - INFO - Getting prompt information
+2024-10-30 15:47:17,562 - root - INFO - Input: Here is the purchase history of ML100K user_1 : ML100K item item_<CI2><CI20><CI18> , item_<CI3><CI33><CI3> , item_<CI5><CI54><CI3> , item_<CI1><CI12><CI1> , item_<CI2><CI21><CI4> , item_<CI1><CI13><CI15> , item_<CI2><CI20><CI12> , item_<CI2><CI20><CI20> , item_<CI2><CI29><CI2> , item_<CI8><CI45> , item_<CI2><CI24><CI11> , item_<CI3><CI33><CI4> , item_<CI1><CI13><CI12> , item_<CI5><CI51><CI4> , item_<CI1><CI17><CI14> , item_<CI4><CI49><CI4> , item_<CI1><CI12><CI16> , item_<CI1><CI12><CI13> , item_<CI6><CI64> , item_<CI1><CI12><CI5> . I wonder what is the next recommended item for the user . , Output: ML100K item_<CI1><CI13><CI13> 
+2024-10-30 15:47:17,615 - root - INFO - Use t5-small backbone model
+2024-10-30 15:47:17,980 - root - INFO - Random initialize number related tokens
+2024-10-30 15:47:19,304 - root - INFO - Load model from ../checkpoint/ML100K_collaborative.pt
+2024-10-30 15:47:19,652 - root - INFO - testing ML100K dataset on sequential task
+2024-10-30 15:47:30,374 - root - INFO - hit@5: 0.0
+2024-10-30 15:47:30,374 - root - INFO - hit@10: 0.0
+2024-10-30 15:47:30,374 - root - INFO - ndcg@5: 0.0
+2024-10-30 15:47:30,375 - root - INFO - ndcg@10: 0.0
+2024-10-30 15:47:30,438 - root - INFO - testing ML100K dataset on straightforward task
+2024-10-30 15:47:33,002 - root - INFO - hit@5: 0.0
+2024-10-30 15:47:33,002 - root - INFO - hit@10: 0.0
+2024-10-30 15:47:33,002 - root - INFO - ndcg@5: 0.0
+2024-10-30 15:47:33,002 - root - INFO - ndcg@10: 0.0

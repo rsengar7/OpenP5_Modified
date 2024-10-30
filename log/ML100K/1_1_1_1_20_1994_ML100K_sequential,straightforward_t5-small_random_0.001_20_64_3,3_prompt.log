@@ -1,0 +1,20 @@
+2024-10-30 14:21:00,988 - root - INFO - {'seed': 2023, 'model_dir': '../model', 'checkpoint_dir': '../checkpoint', 'model_name': 'model.pt', 'log_dir': '../log', 'distributed': 1, 'gpu': '6,7', 'master_addr': 'localhost', 'master_port': '1994', 'logging_level': 20, 'data_path': '../data', 'item_indexing': 'random', 'tasks': 'sequential,straightforward', 'datasets': 'ML100K', 'prompt_file': '../prompt.txt', 'sequential_order': 'original', 'collaborative_token_size': 200, 'collaborative_cluster': 20, 'collaborative_last_token': 'sequential', 'collaborative_float32': 0, 'max_his': 20, 'his_prefix': 1, 'his_sep': ' , ', 'skip_empty_his': 1, 'valid_prompt': 'seen:0', 'valid_prompt_sample': 1, 'valid_sample_num': '3,3', 'test_prompt': 'seen:0', 'sample_prompt': 1, 'sample_num': '3,3', 'batch_size': 64, 'eval_batch_size': 20, 'dist_sampler': 0, 'optim': 'AdamW', 'epochs': 20, 'lr': 0.001, 'clip': 1, 'logging_step': 100, 'warmup_prop': 0.05, 'gradient_accumulation_steps': 1, 'weight_decay': 0.01, 'adam_eps': 1e-06, 'dropout': 0.1, 'alpha': 2, 'train': 1, 'backbone': 't5-small', 'metrics': 'hit@5,hit@10,ndcg@5,ndcg@10', 'load': 0, 'random_initialize': 1, 'test_epoch': 0, 'valid_select': 0, 'test_before_train': 0, 'test_filtered': 0, 'test_filtered_batch': 1, 'log_name': '1_1_1_1_20_1994_ML100K_sequential,straightforward_t5-small_random_0.001_20_64_3,3_prompt', 'model_path': '../model/ML100K/1_1_1_1_20_1994_ML100K_sequential,straightforward_t5-small_random_0.001_20_64_3,3_prompt.pt', 'rank': 0}
+2024-10-30 14:21:01,247 - root - INFO - Generating data for ML100K dataset
+2024-10-30 14:21:01,247 - root - INFO - Get prompt template from ../prompt.txt
+2024-10-30 14:21:01,248 - root - INFO - Considering {dataset} user_{user_id} has interacted with {dataset} items {history} . What is the next recommendation for the user ?
+2024-10-30 14:21:01,248 - root - INFO - Required info: ['user_id', 'target', 'history', 'dataset']
+2024-10-30 14:21:01,249 - root - INFO - Reindex data with random indexing method
+2024-10-30 14:21:01,251 - root - INFO - loading training data
+2024-10-30 14:21:01,254 - root - INFO - Getting prompt information
+2024-10-30 14:21:01,264 - root - INFO - Input: Here is the purchase history of ML100K user_1 : ML100K item item_1190 , item_2302 , item_2033 , item_2043 , item_1027 , item_1652 , item_1257 , item_1804 , item_2128 , item_1336 , item_1838 , item_2325 , item_1932 , item_1684 , item_2324 , item_1352 , item_1736 , item_1535 , item_1490 , item_2105 . I wonder what is the next recommended item for the user . , Output: ML100K item_2264 
+2024-10-30 14:21:01,316 - root - INFO - Use t5-small backbone model
+2024-10-30 14:21:01,654 - root - INFO - Random initialize number related tokens
+2024-10-30 14:21:02,884 - root - INFO - Building Optimizer and Scheduler
+2024-10-30 14:21:02,884 - root - INFO - Batch per epoch: 66
+2024-10-30 14:21:02,884 - root - INFO - Total steps: 1320
+2024-10-30 14:21:02,884 - root - INFO - Warmup proportion: 0.05
+2024-10-30 14:21:02,884 - root - INFO - Warm up steps: 66
+2024-10-30 14:21:02,886 - root - INFO - Building Optimizer AdamW
+2024-10-30 14:21:03,831 - root - INFO - Start training
+2024-10-30 14:21:03,842 - root - INFO - Input: ML100K user_1 has purchased ML100K items item_1190 , item_2302 , item_2033 , item_2043 , item_1027 , item_1652 , item_1257 , item_1804 , item_2128 , item_1336 , item_1838 , item_2325 , item_1932 , item_1684 , item_2324 , item_1352 , item_1736 , item_1535 , item_1490 , item_2105, predict next possible item to be bought by the user ? , Output: ML100K item_2264 
+2024-10-30 14:21:03,842 - root - INFO - Start training for epoch 1
